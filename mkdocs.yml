@@ -1,0 +1,30 @@
+site_name: База знаний
+site_url: https://zlukfo.github.io/kb
+site_author: zlukfo
+
+# Repository
+repo_name: kb
+repo_url: https://github.com/zlukfo/kb
+edit_uri: edit/master/docs
+docs_dir: docs
+
+nav:
+    - Bitrix24: about.md
+    - Postgresql: postgresql/index.md
+    - Python: about.md
+#theme: readthedocs
+theme:
+  name: material
+plugins:
+  - awesome-pages
+  - search
+  - build_plantuml:
+      render: 'server' # or "local" for local rendering
+      bin_path: '/usr/local/bin/plantuml' # ignored when render: server
+      server: 'http://www.plantuml.com/plantuml' # offical plantuml server
+      disable_ssl_certificate_validation: true # for self-signed and invalid certs
+      output_format: 'svg' # or "png"
+      diagram_root: 'docs\diagrams' # should reside under docs_dir
+      output_folder: 'out'
+      input_folder: 'src'
+      input_extensions: '' # comma separated list of extensions to parse, by default every file is parsed
